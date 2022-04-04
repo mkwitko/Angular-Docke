@@ -1,0 +1,42 @@
+<app-header [menu]="false"></app-header>
+<div class="d-flex align-items-center justify-content-center h">
+    <div class="card p-3 border-primary rounded-3 w-50">
+        <div class="card-body">
+            <div class="mb-3">
+                <h5 class="card-title">Login</h5>
+                <h6 class="card-subtitle text-muted">
+                    Entre com seu login e senha para acessar a aplicação</h6>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="form-floating mb-3">
+                    <input email required formControlName="email" id="emailInput" type="email" class="form-control" placeholder="Entre com seu E-mail.">
+                    <label for="emailInput">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input required formControlName="password" id="emailInput" type="password" class="form-control" placeholder="Entre com sua Senha.">
+                    <label for="emailInput">Senha</label>
+                </div>
+                <div *ngIf="loginForm.errors">
+                    
+                </div>
+                <div class="row buttons pt-3">
+                    <div class="col text-start">
+                        <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">
+                            Login
+                        </button>
+                    </div>
+                    <div class="col text-center">
+                        <button (click)="goTo('register')" class="btn btn-secondary">
+                            Cadastrar
+                        </button>
+                    </div>
+                    <div class="col text-end">
+                        <button (click)="goTo('forgot')" class="btn btn-outline-primary">
+                            Esqueci minha Senha
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

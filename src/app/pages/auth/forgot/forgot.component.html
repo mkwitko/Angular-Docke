@@ -1,0 +1,32 @@
+<app-header url="login" [menu]="false"></app-header>
+
+
+<div class="d-flex align-items-center justify-content-center h">
+    <div class="card p-3 border-primary rounded-3 w-50">
+        <div class="card-body">
+            <div class="mb-3">
+                <h5 class="card-title">Esqueci minha senha</h5>
+                <h6 class="card-subtitle text-muted">
+                    Entre com seu email para recuperar sua senha</h6>
+            </div>
+            <form action="">
+                <div class="form-floating mb-3">
+                    <input id="emailInput" type="email" class="form-control" placeholder="Entre com seu E-mail.">
+                    <label for="emailInput">Email</label>
+                </div>
+                <div class="row buttons pt-3">
+                    <div class="col text-start">
+                        <button class="btn btn-primary">
+                            Enviar
+                        </button>
+                    </div>
+                    <div class="col text-end">
+                        <button (click)="goTo('login')" class="btn btn-outline-primary">
+                            Retornar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
